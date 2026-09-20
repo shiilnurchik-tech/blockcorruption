@@ -1,10 +1,12 @@
 plugins {
-    // Arena back-port: loom 1.17.13 treats MC 1.21.11 as non-obfuscated and hard
-    // rejects dependency access-wideners in the intermediary namespace
-    // (CI run 35490209472: cloth-config 21.11.153). The proven-green 1.21.11
-    // config (mmlo/ReadMyItem, CI success 2026-09-11) uses loom 1.17-SNAPSHOT
-    // with officialMojangMappings instead.
-    id 'net.fabricmc.fabric-loom' version '1.17-SNAPSHOT'
+    // Arena back-port: the plain 'net.fabricmc.fabric-loom' flavor (used by the
+    // 26.1 port) is unobfuscated-first and rejects both officialMojangMappings
+    // and intermediary-namespace dependency access-wideners on 1.21.11
+    // (CI runs 35490156504, 35490209472, 35491200777). The blessed 1.21.11
+    // config (FabricMC/fabric-example-mod branch 1.21.11; mmlo/ReadMyItem green
+    // 2026-09-11) is the '-remap' flavor + loom 1.17-SNAPSHOT +
+    // officialMojangMappings.
+    id 'net.fabricmc.fabric-loom-remap' version '1.17-SNAPSHOT'
 
     id 'maven-publish'
 
