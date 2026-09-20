@@ -1,0 +1,11 @@
+FAILURE: Build failed with an exception.
+
+* Where:
+--
+* What went wrong:
+A problem occurred evaluating root project 'immersive-portals'.
+> Cannot use Mojang mappings in a non-obfuscated environment
+--
+Caused by: java.lang.UnsupportedOperationException: Cannot use Mojang mappings in a non-obfuscated environment
+	at net.fabricmc.loom.extension.LoomGradleExtensionApiImpl.officialMojangMappings(LoomGradleExtensionApiImpl.java:274)
+	at build_1npwew7uactejtpeq5l8undsw$_run_closure5.doCall$original(/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/build.gradle:70)
