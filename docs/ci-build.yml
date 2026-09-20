@@ -1,0 +1,37 @@
+name: build
+
+on:
+  push:
+    branches:
+      - arena/01a0baa5-blockcorruption
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: libs/immersive-portals
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Compile (back-port iteration)
+        run: ./gradlew compileJava --no-daemon --console=plain --stacktrace
+
+      - name: Full build
+        run: ./gradlew build -x test --no-daemon --console=plain
+
+      - name: Upload artifacts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: immersive-portals-1.21.11
+          path: libs/immersive-portals/build/libs/*.jar
