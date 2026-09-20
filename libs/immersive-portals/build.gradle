@@ -62,12 +62,11 @@ loom {
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
 
-    // Arena back-port to 1.21.11: unlike 26.1+, Minecraft 1.21.11 still ships
-    // obfuscated, so Loom needs mappings again. The source tree is written in
-    // official Mojang names (the 26.1 port dropped Yarn), so official mappings are
-    // the only mapping set that compiles it unmodified. Loom downloads them from
-    // Mojang's maven at build time.
-    mappings loom.officialMojangMappings()
+    // Arena back-port: CI (run 35490156504) proved Loom treats 1.21.11 as a
+    // non-obfuscated environment ("Cannot use Mojang mappings in a
+    // non-obfuscated environment"), i.e. the 1.21.11 jar ships official names —
+    // same as 26.1. The source is written in official names, so no mappings
+    // dependency is needed or allowed.
 
     implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
