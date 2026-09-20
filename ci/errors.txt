@@ -1,11 +1,17 @@
 FAILURE: Build failed with an exception.
 
-* Where:
---
 * What went wrong:
-A problem occurred evaluating root project 'immersive-portals'.
-> Cannot use Mojang mappings in a non-obfuscated environment
+A problem occurred configuring root project 'immersive-portals'.
+> Failed to setup Minecraft, java.io.IOException: Failed to process jar when running jar processor: fabric-loom:access-widener - Expected official namespace for access widener entry, found: intermediary in mod: cloth-config
 --
-Caused by: java.lang.UnsupportedOperationException: Cannot use Mojang mappings in a non-obfuscated environment
-	at net.fabricmc.loom.extension.LoomGradleExtensionApiImpl.officialMojangMappings(LoomGradleExtensionApiImpl.java:274)
-	at build_1npwew7uactejtpeq5l8undsw$_run_closure5.doCall$original(/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/build.gradle:70)
+Caused by: java.lang.RuntimeException: Failed to setup Minecraft, java.io.IOException: Failed to process jar when running jar processor: fabric-loom:access-widener - Expected official namespace for access widener entry, found: intermediary in mod: cloth-config
+	at net.fabricmc.loom.util.ExceptionUtil.createDescriptiveWrapper(ExceptionUtil.java:59)
+	at net.fabricmc.loom.configuration.CompileConfiguration.lambda$run$1(CompileConfiguration.java:135)
+--
+Caused by: java.io.IOException: Failed to process jar when running jar processor: fabric-loom:access-widener - Expected official namespace for access widener entry, found: intermediary in mod: cloth-config
+	at net.fabricmc.loom.configuration.processors.MinecraftJarProcessorManager.processJar(MinecraftJarProcessorManager.java:154)
+	at net.fabricmc.loom.configuration.providers.minecraft.mapped.ProcessedNamedMinecraftProvider.processJars(ProcessedNamedMinecraftProvider.java:108)
+--
+Caused by: java.io.IOException: Expected official namespace for access widener entry, found: intermediary in mod: cloth-config
+	at net.fabricmc.loom.configuration.accesswidener.ModAccessWidenerEntry.readOfficial(ModAccessWidenerEntry.java:99)
+	at net.fabricmc.loom.configuration.accesswidener.AccessWidenerJarProcessor.getClassTweaker(AccessWidenerJarProcessor.java:144)
