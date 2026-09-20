@@ -1,5 +1,10 @@
 plugins {
-    id 'net.fabricmc.fabric-loom' version '1.17.13'
+    // Arena back-port: loom 1.17.13 treats MC 1.21.11 as non-obfuscated and hard
+    // rejects dependency access-wideners in the intermediary namespace
+    // (CI run 35490209472: cloth-config 21.11.153). The proven-green 1.21.11
+    // config (mmlo/ReadMyItem, CI success 2026-09-11) uses loom 1.17-SNAPSHOT
+    // with officialMojangMappings instead.
+    id 'net.fabricmc.fabric-loom' version '1.17-SNAPSHOT'
 
     id 'maven-publish'
 
@@ -62,11 +67,10 @@ loom {
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
 
-    // Arena back-port: CI (run 35490156504) proved Loom treats 1.21.11 as a
-    // non-obfuscated environment ("Cannot use Mojang mappings in a
-    // non-obfuscated environment"), i.e. the 1.21.11 jar ships official names —
-    // same as 26.1. The source is written in official names, so no mappings
-    // dependency is needed or allowed.
+    // Arena back-port: with loom 1.17-SNAPSHOT the 1.21.11 environment is
+    // obfuscated again, so official Mojang mappings are required (source is
+    // written in official names) — same as the proven-green ReadMyItem config.
+    mappings loom.officialMojangMappings()
 
     implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
