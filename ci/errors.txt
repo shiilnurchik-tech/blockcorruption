@@ -1,0 +1,400 @@
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/my_util/GuiHelper.java:5: error: cannot find symbol
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+                               ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/my_util/GuiHelper.java:108: error: cannot find symbol
+        public void renderTextLeft(Component text, GuiGraphicsExtractor guiGraphics) {
+                                                   ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/CustomTextOverlay.java:12: error: cannot find symbol
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+                               ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/CustomTextOverlay.java:70: error: cannot find symbol
+    public static void render(GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker) {
+                              ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/dimension/MixinPlayerList_Misc.java:7: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/dimension/MixinPlayerList_Misc.java:8: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.At;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/dimension/MixinPlayerList_Misc.java:9: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.Inject;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/dimension/MixinPlayerList_Misc.java:10: error: package org.spongepowered.asm.mixin.injection.callback does not exist
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+                                                     ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/dimension/MixinPlayerList_Misc.java:13: error: cannot find symbol
+@Mixin(PlayerList.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/dimension/MixinPlayerList_Misc.java:26: error: cannot find symbol
+        CallbackInfo ci
+        ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/IEClientPacketListener_Misc.java:6: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/IEClientPacketListener_Misc.java:7: error: package org.spongepowered.asm.mixin.gen does not exist
+import org.spongepowered.asm.mixin.gen.Accessor;
+                                      ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/IEClientPacketListener_Misc.java:11: error: cannot find symbol
+@Mixin(ClientPacketListener.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/MixinGui_Overlay.java:6: error: cannot find symbol
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+                               ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/MixinGui_Overlay.java:7: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Final;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/MixinGui_Overlay.java:8: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/MixinGui_Overlay.java:9: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Shadow;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/MixinGui_Overlay.java:10: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.At;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/MixinGui_Overlay.java:11: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.Inject;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/MixinGui_Overlay.java:12: error: package org.spongepowered.asm.mixin.injection.callback does not exist
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+                                                     ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/MixinGui_Overlay.java:15: error: cannot find symbol
+@Mixin(Gui.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/MixinGui_Overlay.java:25: error: cannot find symbol
+        GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci
+        ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/client/MixinGui_Overlay.java:25: error: cannot find symbol
+        GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci
+                                                                     ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/IELevelStorageAccess_Misc.java:4: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/IELevelStorageAccess_Misc.java:5: error: package org.spongepowered.asm.mixin.gen does not exist
+import org.spongepowered.asm.mixin.gen.Accessor;
+                                      ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/IELevelStorageAccess_Misc.java:7: error: cannot find symbol
+@Mixin(LevelStorageSource.LevelStorageAccess.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/MixinMinecraftServer_Misc.java:12: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Final;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/MixinMinecraftServer_Misc.java:13: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/MixinMinecraftServer_Misc.java:14: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Shadow;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/MixinMinecraftServer_Misc.java:15: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.At;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/MixinMinecraftServer_Misc.java:16: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.Inject;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/MixinMinecraftServer_Misc.java:17: error: package org.spongepowered.asm.mixin.injection.callback does not exist
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+                                                     ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/MixinMinecraftServer_Misc.java:28: error: cannot find symbol
+@Mixin(MinecraftServer.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/MixinMinecraftServer_Misc.java:56: error: cannot find symbol
+        boolean propagatesCrashes, CallbackInfo ci
+                                   ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/q_misc_util/mixin/MixinMinecraftServer_Misc.java:62: error: cannot find symbol
+    private void onWorldsCreated(CallbackInfo ci) {
+                                 ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/IClientPacketListener.java:6: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/IClientPacketListener.java:7: error: package org.spongepowered.asm.mixin.gen does not exist
+import org.spongepowered.asm.mixin.gen.Accessor;
+                                      ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/IClientPacketListener.java:11: error: cannot find symbol
+@Mixin(ClientPacketListener.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinBackupConfirmScreen.java:11: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Final;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinBackupConfirmScreen.java:12: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinBackupConfirmScreen.java:13: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Shadow;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinBackupConfirmScreen.java:14: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Unique;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinBackupConfirmScreen.java:15: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.At;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinBackupConfirmScreen.java:16: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.Inject;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinBackupConfirmScreen.java:17: error: package org.spongepowered.asm.mixin.injection.callback does not exist
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+                                                     ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinBackupConfirmScreen.java:23: error: cannot find symbol
+@Mixin(BackupConfirmScreen.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinBackupConfirmScreen.java:48: error: cannot find symbol
+        Component component, Component component2, boolean bl, CallbackInfo ci
+                                                               ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinBackupConfirmScreen.java:57: error: cannot find symbol
+    private void onInitEnd(CallbackInfo ci) {
+                           ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinMinecraft.java:5: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinMinecraft.java:6: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.At;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinMinecraft.java:7: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.Inject;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinMinecraft.java:8: error: package org.spongepowered.asm.mixin.injection.callback does not exist
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+                                                     ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinMinecraft.java:11: error: cannot find symbol
+@Mixin(Minecraft.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/client/MixinMinecraft.java:14: error: cannot find symbol
+    private void onClientReset(ClientLevel level, CallbackInfo ci) {
+                                                  ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinPlayerList.java:8: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinPlayerList.java:9: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.At;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinPlayerList.java:10: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.Inject;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinPlayerList.java:11: error: package org.spongepowered.asm.mixin.injection.callback does not exist
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+                                                     ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinPlayerList.java:14: error: cannot find symbol
+@Mixin(PlayerList.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinPlayerList.java:28: error: cannot find symbol
+        CallbackInfo ci
+        ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinWorldDimensions.java:7: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinWorldDimensions.java:8: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.At;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinWorldDimensions.java:9: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.Inject;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinWorldDimensions.java:10: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.Redirect;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinWorldDimensions.java:11: error: package org.spongepowered.asm.mixin.injection.callback does not exist
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+                                                     ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinWorldDimensions.java:14: error: cannot find symbol
+@Mixin(WorldDimensions.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinWorldDimensions.java:21: error: cannot find symbol
+        ResourceKey<LevelStem> resourceKey, LevelStem levelStem, CallbackInfoReturnable<Boolean> cir
+                                                                 ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMappedRegistry.java:14: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Final;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMappedRegistry.java:15: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMappedRegistry.java:16: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Shadow;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMappedRegistry.java:23: error: cannot find symbol
+@Mixin(MappedRegistry.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMinecraftServer.java:12: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Final;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMinecraftServer.java:13: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMinecraftServer.java:14: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mutable;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMinecraftServer.java:15: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Shadow;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMinecraftServer.java:16: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Unique;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMinecraftServer.java:17: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.At;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMinecraftServer.java:18: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.Inject;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMinecraftServer.java:19: error: package org.spongepowered.asm.mixin.injection.callback does not exist
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+                                                     ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMinecraftServer.java:29: error: cannot find symbol
+@Mixin(MinecraftServer.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMinecraftServer.java:74: error: cannot find symbol
+        CallbackInfo ci
+        ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinMinecraftServer.java:93: error: cannot find symbol
+        CallbackInfo ci
+        ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/IEWorldBorder.java:5: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/IEWorldBorder.java:6: error: package org.spongepowered.asm.mixin.gen does not exist
+import org.spongepowered.asm.mixin.gen.Accessor;
+                                      ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/IEWorldBorder.java:10: error: cannot find symbol
+@Mixin(WorldBorder.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinPrimaryLevelData.java:5: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinPrimaryLevelData.java:6: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.At;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinPrimaryLevelData.java:7: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.Inject;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinPrimaryLevelData.java:8: error: package org.spongepowered.asm.mixin.injection.callback does not exist
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+                                                     ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinPrimaryLevelData.java:12: error: cannot find symbol
+@Mixin(PrimaryLevelData.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/dimlib/mixin/common/MixinPrimaryLevelData.java:16: error: cannot find symbol
+    private void onWorldGenSettingsLifecycle(CallbackInfoReturnable<Lifecycle> cir) {
+                                             ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/IPPeripheralMixinPlugin.java:3: error: package org.objectweb.asm.tree does not exist
+import org.objectweb.asm.tree.ClassNode;
+                             ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/IPPeripheralMixinPlugin.java:4: error: package org.spongepowered.asm.mixin.extensibility does not exist
+import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
+                                                ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/IPPeripheralMixinPlugin.java:5: error: package org.spongepowered.asm.mixin.extensibility does not exist
+import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
+                                                ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/IPPeripheralMixinPlugin.java:10: error: cannot find symbol
+public class IPPeripheralMixinPlugin implements IMixinConfigPlugin {
+                                                ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/IPPeripheralMixinPlugin.java:43: error: cannot find symbol
+    public void preApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
+                                                 ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/IPPeripheralMixinPlugin.java:43: error: cannot find symbol
+    public void preApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
+                                                                                               ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/IPPeripheralMixinPlugin.java:48: error: cannot find symbol
+    public void postApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
+                                                  ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/IPPeripheralMixinPlugin.java:48: error: cannot find symbol
+    public void postApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
+                                                                                                ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/PeripheralModMain.java:6: error: package net.fabricmc.fabric.api.creativetab.v1 does not exist
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
+                                             ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/dim_stack/DimStackEntryEditScreen.java:4: error: cannot find symbol
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+                               ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/dim_stack/DimStackScreen.java:7: error: cannot find symbol
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+                               ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/dim_stack/DimEntryWidget.java:5: error: cannot find symbol
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+                               ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/dim_stack/DimStackEntryEditScreen.java:294: error: cannot find symbol
+    public void extractRenderState(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float delta) {
+                                   ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/dim_stack/DimListWidget.java:4: error: cannot find symbol
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+                               ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/dim_stack/DimEntryWidget.java:84: error: cannot find symbol
+        @NotNull GuiGraphicsExtractor guiGraphics,
+                 ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/dim_stack/DimListWidget.java:87: error: cannot find symbol
+    protected void extractListBackground(GuiGraphicsExtractor guiGraphics) {
+                                         ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/dim_stack/DimStackScreen.java:270: error: cannot find symbol
+    public void extractRenderState(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
+                                   ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/dim_stack/SelectDimensionScreen.java:4: error: cannot find symbol
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+                               ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/dim_stack/SelectDimensionScreen.java:82: error: cannot find symbol
+    public void extractRenderState(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float delta) {
+                                   ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/mixin/client/portal_wand/MixinDebugRenderer.java:3: error: package com.llamalad7.mixinextras.sugar does not exist
+import com.llamalad7.mixinextras.sugar.Local;
+                                      ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/mixin/client/portal_wand/MixinDebugRenderer.java:9: error: package net.minecraft.client.renderer.state.level does not exist
+import net.minecraft.client.renderer.state.level.LevelRenderState;
+                                                ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/mixin/client/portal_wand/MixinDebugRenderer.java:12: error: package org.spongepowered.asm.mixin does not exist
+import org.spongepowered.asm.mixin.Mixin;
+                                  ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/mixin/client/portal_wand/MixinDebugRenderer.java:13: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.At;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/mixin/client/portal_wand/MixinDebugRenderer.java:14: error: package org.spongepowered.asm.mixin.injection does not exist
+import org.spongepowered.asm.mixin.injection.Inject;
+                                            ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/mixin/client/portal_wand/MixinDebugRenderer.java:15: error: package org.spongepowered.asm.mixin.injection.callback does not exist
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+                                                     ^
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/mixin/client/portal_wand/MixinDebugRenderer.java:39: error: cannot find symbol
+@Mixin(LevelRenderer.class)
+ ^
+--
+/home/runner/work/blockcorruption/blockcorruption/libs/immersive-portals/src/main/java/qouteall/imm_ptl/peripheral/mixin/client/portal_wand/MixinDebugRenderer.java:46: error: cannot find symbol

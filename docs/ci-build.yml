@@ -1,0 +1,71 @@
+name: build
+
+on:
+  push:
+    branches:
+      - arena/01a0baa5-blockcorruption
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: libs/immersive-portals
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Compile (back-port iteration)
+        run: |
+          set -o pipefail
+          ./gradlew compileJava --no-daemon --console=plain --stacktrace 2>&1 | tee /tmp/compile.log
+
+      - name: Full build
+        run: |
+          set -o pipefail
+          ./gradlew build -x test --no-daemon --console=plain 2>&1 | tee -a /tmp/compile.log
+
+      - name: Upload artifacts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: immersive-portals-1.21.11
+          path: libs/immersive-portals/build/libs/*.jar
+
+      # The sandbox that drives this back-port cannot download Actions log
+      # archives (results-receiver host is unreachable from it), but it CAN read
+      # repo files via the GitHub API. So on every run we publish the error
+      # extract + log tail into the repo; the [skip ci] commit avoids a loop.
+      - name: Publish build log to repo
+        if: always()
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          mkdir -p ci
+          if [ -f /tmp/compile.log ]; then
+            grep -E "error:|ERROR|FAILURE|What went wrong|Caused by" -A 2 /tmp/compile.log | head -400 > ci/errors.txt || true
+            tail -c 300000 /tmp/compile.log > ci/last-build.log
+          else
+            echo "no compile.log (failed before gradle ran)" > ci/errors.txt
+            echo "no compile.log" > ci/last-build.log
+          fi
+          echo "run=${GITHUB_RUN_ID} sha=${GITHUB_SHA}" > ci/run-info.txt
+          git config user.name "CI Bot"
+          git config user.email "ci@users.noreply.github.com"
+          git add ci/
+          git commit -q -m "ci: publish build log [skip ci]" || echo "nothing to commit"
+          git push origin HEAD:arena/01a0baa5-blockcorruption || echo "push failed"

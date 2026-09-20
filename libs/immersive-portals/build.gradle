@@ -1,0 +1,261 @@
+plugins {
+    // Arena back-port: the plain 'net.fabricmc.fabric-loom' flavor (used by the
+    // 26.1 port) is unobfuscated-first and rejects both officialMojangMappings
+    // and intermediary-namespace dependency access-wideners on 1.21.11
+    // (CI runs 35490156504, 35490209472, 35491200777). The blessed 1.21.11
+    // config (FabricMC/fabric-example-mod branch 1.21.11; mmlo/ReadMyItem green
+    // 2026-09-11) is the '-remap' flavor + loom 1.17-SNAPSHOT +
+    // officialMojangMappings.
+    id 'net.fabricmc.fabric-loom-remap' version '1.17-SNAPSHOT'
+
+    id 'maven-publish'
+
+    id "me.modmuss50.mod-publish-plugin" version "0.3.5"
+    // https://modmuss50.github.io/mod-publish-plugin/
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    flatDir {
+        dirs 'deps'
+    }
+}
+
+version = rootProject.mod_version
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        name = 'JitPack'
+        url = 'https://jitpack.io'
+    }
+
+    // cloth config
+    maven { url = "https://maven.shedaniel.me/" }
+    maven { url = "https://maven.terraformersmc.com/releases/" }
+
+    // for sodium
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
+    }
+
+    // for cardinal components that gravity changer uses
+    maven {
+        name = 'Ladysnake'
+        url = 'https://maven.ladysnake.org/releases'
+    }
+
+    // geckolib, for testing with portal gun
+    maven { url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+
+
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/imm_ptl.accesswidener")
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+
+    // Arena back-port: with loom 1.17-SNAPSHOT the 1.21.11 environment is
+    // obfuscated again, so official Mojang mappings are required (source is
+    // written in official names) — same as the proven-green ReadMyItem config.
+    mappings loom.officialMojangMappings()
+
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    implementation("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}") {
+        exclude module: "fabric-gametest-api-v1"
+        // for now, the gametest module makes client unable to login dev env server
+    }
+
+    api("me.shedaniel.cloth:cloth-config-fabric:${cloth_config_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
+    include "me.shedaniel.cloth:cloth-config-fabric:${cloth_config_version}"
+
+    compileOnly "maven.modrinth:modmenu:${modmenu_version}"
+    localRuntime "maven.modrinth:modmenu:${modmenu_version}"
+
+    // Used by the DimLib module (qouteall.dimlib, merged into this repo's own
+    // source tree — see src/main/java/qouteall/dimlib — since upstream DimLib
+    // (iPortalTeam/DimLib) is archived and has no 26.1-compatible release).
+    implementation "maven.modrinth:midnightlib:${midnightlib_version}"
+    include "maven.modrinth:midnightlib:${midnightlib_version}"
+
+    // Arena back-port: coordinates now point at 1.21.11 artifacts, so they resolve
+    // fine as compileOnly. Runtime stays opt-in via enable_sodium/enable_iris.
+
+    compileOnly "${project.sodium_path}"
+
+    compileOnly "${project.iris_path}"
+
+    // put these into inner mod to reduce duplicate MC jar
+
+    if (project.enable_sodium.equals('true')) {
+        localRuntime "${project.sodium_path}"
+    }
+
+    if (project.enable_iris.equals('true')) {
+        localRuntime "${project.iris_path}"
+        implementation "org.anarres:jcpp:1.4.14" // for iris
+        implementation 'io.github.douira:glsl-transformer:2.0.0-pre13' // for iris
+        implementation 'org.antlr:antlr4-runtime:4.11.1' // for iris
+    }
+
+    if (project.enable_geckolib.equals('true')) {
+        // for testing portal gun using dev jar
+        localRuntime('software.bernie.geckolib:geckolib-fabric-1.20:4.2') {
+            transitive = false
+        }
+    }
+
+    if (project.enable_test_mod.equals('true')) {
+        fileTree(dir: 'deps', include: '*.jar').each {
+            String baseName = it.name.replace(".jar", "")
+            String version = "0.1.0"
+            int split = baseName.lastIndexOf('-')
+
+            if (split != -1) {
+                version = baseName.substring(split + 1)
+                baseName = baseName.substring(0, split)
+            }
+
+            String name = "testmod:${baseName}:${version}"
+
+            System.out.println("Found test mod: " + it.name.replace(".jar", "") + " -> " + name)
+
+            implementation name
+        }
+    }
+    testImplementation(platform('org.junit:junit-bom:5.10.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    // Capture the version at configuration time into a plain local variable --
+    // referencing `project`/`project.version` directly inside the filesMatching
+    // closure is only evaluated at task execution time, which is unsupported
+    // under the configuration cache (Gradle disallows Groovy closures capturing
+    // the Project script object across the configuration/execution boundary).
+    String modVersion = project.version
+    filesMatching("fabric.mod.json") {
+        expand "version": modVersion
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    // Arena back-port: 1.21.11 runs on Java 21 (26.x required 25).
+    it.options.release = 21
+    // Default javac caps error output at 100 per invocation, which hides errors
+    // during this migration (fixing a visible error just unmasks another one behind
+    // the cap instead of shrinking the visible count). Raise it so
+    // migration_tools/parse_compile_errors.py sees the true full error list.
+    it.options.compilerArgs << "-Xmaxerrs" << "5000"
+}
+
+java {
+    // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+    // if it is present.
+    // If you remove this line, sources will not be generated.
+    withSourcesJar()
+
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+
+jar {
+    // change the output file name
+    afterEvaluate {
+        archiveFileName = "${project.archives_base_name}-${project.mod_version}-mc${project.minecraft_version}-fabric.jar"
+    }
+
+    // Same configuration-cache constraint as processResources above: the `rename`
+    // closure runs at copy-task execution time, so `project` can't be referenced
+    // inside it directly -- capture the resolved name at configuration time instead.
+    String archivesName = project.base.archivesName.get()
+    from("LICENSE") {
+        rename { "${it}_${archivesName}" }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+// miscellaneous
+
+task printClasspath {
+    doLast {
+        // NOTE don't forget to exclude the submod dev jar
+        configurations.compileClasspath.each { println "\"" + (it.toString().replace("\\", "/")) + "\"," }
+    }
+}
+
+// Enable ZGC: -XX:+UseZGC
+
+// run test when building will slow down the build process
+// manually run when needed
+//test {
+//    useJUnitPlatform()
+//    testLogging {
+//        events "passed", "skipped", "failed"
+//    }
+//}
+
+publishMods {
+    file = jar.archiveFile
+    changelog = file("changelog.md").text
+    type = ALPHA
+    modLoaders.add("fabric")
+
+    displayName = "v${project.mod_version}-mc${project.minecraft_version}"
+    version = "v${project.mod_version}-mc${project.minecraft_version}"
+
+    curseforge {
+        projectId = "332273"
+        accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+        minecraftVersions.add(minecraft_version)
+
+        requires {
+            slug = "fabric-api"
+        }
+    }
+    modrinth {
+        projectId = "zJpHMkdD"
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        minecraftVersions.add(minecraft_version)
+
+        requires {
+            slug = "fabric-api"
+        }
+    }
+    github {
+        repository = "iPortalTeam/ImmersivePortalsMod"
+        accessToken = providers.environmentVariable("GITHUB_TOKEN")
+        commitish = "${project.git_branch}"
+    }
+}
